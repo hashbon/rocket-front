@@ -1,0 +1,76 @@
+@import "../../../../../static/styles/mixins.scss";
+
+.AccordionItem {
+  &_wrapper {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    box-sizing: border-box;
+
+    @include screen("(max-width: 960px)") {
+      padding: 0 16px;
+    }
+
+    &_header {
+      width: 100%;
+      display: flex;
+
+      &_left {
+        width: calc(100% - 44px);
+        padding-top: 40px;
+        padding-bottom: 40px;
+        cursor: pointer;
+
+        @include screen("(max-width: 960px)") {
+          width: calc(100% - 60px);
+        }
+
+        span {
+          font-weight: bolder;
+          font-size: 18px;
+        }
+      }
+
+      &_right {
+        padding-top: 29px;
+        width: 44px;
+        margin-left: auto;
+        margin-right: 0;
+
+        &_close {
+          width: 44px;
+          height: 44px;
+          background-color: rgba(255,255,255,0.1);
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          transition: all 100ms ease-in;
+
+          svg {
+            margin: auto;
+            width: 24px;
+            height: 24px;
+          }
+
+          &.rotate {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    &_content {
+      width: 100%;
+      padding-bottom: 10px;
+
+      span {
+        line-height: 24px;
+        font-size: 16px;
+      }
+    }
+  }
+}

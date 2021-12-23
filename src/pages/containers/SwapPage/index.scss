@@ -1,0 +1,21 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.SwapWrapper {
+  margin: auto;
+  max-width: 480px;
+  background-color: #3794DB;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 16px;
+  &_title {
+    width: 100%;
+    span {
+      color: white;
+      margin: auto 0;
+      font-size: 24px;
+      font-weight: bolder;
+    }
+  }
+}
+

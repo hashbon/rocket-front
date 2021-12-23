@@ -1,0 +1,633 @@
+@import "../../../static/styles/mixins.scss";
+
+.LandingHashtokenContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0a0707;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+
+  &_header {
+    padding: 0 40px;
+    z-index: 1500;
+
+    @include screen("(max-width: 767px)") {
+      padding: 0 15px;
+    }
+  }
+}
+
+.LandingHashtokenPage {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 50px auto auto;
+
+  @include screen("(min-width: 1280px)") {
+    width: 1100px;
+  }
+
+  @include screen("(min-width: 768px) and (max-width: 1279px)") {
+    width: 900px;
+  }
+
+  @include screen("(max-width: 767px)") {
+    height: auto;
+    padding: 0 15px;
+    justify-content: flex-start;
+  }
+}
+
+.HashToken {
+  &_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 226px;
+
+    @include screen("(max-width: 767px)") {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    &-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 75px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      text-transform: capitalize;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin-bottom: 48px;
+      color: #C8E3E9;
+    }
+
+    &-description {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      color: #C8E3E9;
+      flex: none;
+      flex-grow: 0;
+      margin-bottom: 80px;
+      max-width: 500px;
+
+    }
+
+    &-platforms {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      &_icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      &_text {
+        margin-right: 40px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        color: #C8E3E9;
+      }
+
+      &_text + div {
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.8);
+      }
+
+      &_buttons {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 45px;
+        }
+
+        &_before, &_after {
+          font-weight: 500;
+          font-size: 16px;
+          color: white;
+        }
+
+        &_before {
+          margin-bottom: 30px;
+          text-shadow: 1px 1px 3px black;
+
+          @include screen("(max-width: 767px)") {
+            text-align: center;
+          }
+        }
+
+        &_after {
+          margin-top: 30px;
+          width: 50%;
+        }
+
+        @include screen("(max-width: 767px)") {
+          width: 100%;
+          flex-direction: column;
+        }
+      }
+
+      &_gradient-button {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 35px;
+        background: linear-gradient(276.5deg, #A253FA -8.34%, #00CBE3 87.38%);
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 120%;
+        color: #FFFFFF;
+        margin-right: 63px;
+        white-space: nowrap;
+        align-self: flex-start;
+
+        &--absolute {
+          position: absolute;
+        }
+
+        @include screen("(min-width: 1280px)") {
+          padding: 15px 35px;
+          font-size: 22px;
+          line-height: 120%;
+          margin-right: 63px;
+        }
+
+        @include screen("(min-width: 768px) and (max-width: 1279px)") {
+          padding: 16px 36px;
+          font-size: 16px;
+          line-height: 19px;
+          margin-right: 45px;
+        }
+
+        @include screen("(max-width: 767px)") {
+          width: 100%;
+          height: 52px;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 19px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          text-transform: capitalize;
+          color: #FFFFFF;
+          margin: 0 0 25px 0;
+        }
+      }
+
+      &_gradient-button:hover {
+        transition: none;
+        transition: background .3s linear;
+        background: linear-gradient(276.5deg, #A253FA -8.34%, #00CBE3 87.38%);;
+      }
+
+      > div,a {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &_distribution {
+    width: 100%;
+    max-width: 583px;
+    padding: 41px 48px 55px;
+    background: url('./img/background.png');
+    backdrop-filter: blur(100px);
+    border-radius: 20px;
+    border: 1px solid #989898;
+    display: flex;
+    flex-direction: column;
+
+    @include screen("(min-width: 768px) and (max-width: 1279px)") {
+      max-width: 400px;
+    }
+
+    @include screen("(max-width: 768px)") {
+      margin: 70px 0 60px;
+      padding: 39px 27px;
+    }
+  }
+
+  &_distribution-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    z-index: 100;
+  }
+
+  &_distribution-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #fafafa;
+
+    @include screen("(max-width: 768px)") {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+
+  &_distribution-logo {
+    width: 95px;
+    height: 95px;
+
+    @include screen("(max-width: 768px)") {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &_distribution-table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: .5fr 1fr .45fr;
+
+    &:last-child {
+      justify-self: end;
+    }
+
+    &_top {
+      margin-bottom: 19px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      align-items: center;
+      text-transform: capitalize;
+
+      color: #B9B9B9;
+    }
+
+    &_main {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      align-items: center;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: #FFFFFF;
+
+      @include screen("(max-width: 768px)") {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      > span {
+        margin-bottom: 30px;
+        white-space: nowrap;
+      }
+
+      > h6 {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 30px;
+
+        @include screen("(max-width: 768px)") {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
+
+    &_hr {
+      width: 100%;
+      border-bottom: 1px solid #989898;
+      margin-bottom: 28px;
+    }
+  }
+
+  &_platforms {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 165px;
+    margin-bottom: 150px;
+
+    @include screen("(max-width: 768px)") {
+      margin-top: 60px;
+    }
+
+    &_hr {
+      content: ' ';
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(50, 50, 50, 0) -10.62%, #565555 53.24%, rgba(50, 50, 50, 0) 109.59%);
+    }
+
+    &_vertical-hr {
+      content: ' ';
+      width: 1px;
+      height: 500px;
+      background: linear-gradient(180deg, #515050 0%, transparent 100%);
+
+      @include screen("(max-width: 768px)") {
+        display: none;
+      }
+    }
+
+    &_title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 48px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 34px;
+
+      @include screen("(max-width: 768px)") {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+      }
+    }
+
+    &_table {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include screen("(max-width: 768px)") {
+        flex-direction: column;
+      }
+    }
+
+    &_platform {
+      width: 420px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 110px;
+
+      @include screen("(max-width: 768px)") {
+        width: 100%;
+        margin-top: 18px;
+      }
+
+      &-logo {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 26px;
+
+        @include screen("(max-width: 768px)") {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 3px;
+        }
+      }
+
+      &-name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: #FFFFFF;
+        margin-bottom: 13px;
+
+        @include screen("(max-width: 768px)")  {
+          font-size: 18px;
+          line-height: 41px;
+          margin-bottom: 8px;
+        }
+      }
+
+      &-address {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: capitalize;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #4EB2FF;
+        margin-bottom: 63px;
+        position: relative;
+
+        @include screen("(max-width: 768px)") {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+
+      &-support-container {
+        width: 100%;
+        display: flex;
+      }
+
+      &-support {
+        width: 200px;
+        height: 80px;
+        margin-right: 20px;
+        border: 1px solid #6B6B6B;
+        box-sizing: border-box;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        @include screen("(max-width: 768px)") {
+          width: 158px;
+          height: 63px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &_links {
+    width: 100%;
+    max-width: 1010px;
+    min-height: 182px;
+    background: url('./img/background.png');
+    backdrop-filter: blur(100px);
+    border-radius: 20px;
+    padding: 0 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #989898;
+
+    &_hr {
+      content: ' ';
+      width: 1px;
+      height: 88px;
+      border-right: 1px solid #595f66;
+
+      @include screen("(max-width: 768px)") {
+        height: calc(100% + 15px);
+      }
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+
+    @include screen("(max-width: 768px)") {
+      min-height: 60px;
+      padding: 26px 25px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &_lorem-ipsum {
+    width: 100%;
+    max-width: 569px;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    align-self: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #FFFFFF;
+
+    opacity: 0.6;
+
+    @include screen("(max-width: 768px)") {
+      width: 100%;
+      padding-bottom: 61px;
+    }
+  }
+}
+
+.background-ballon {
+  content: " ";
+  position: absolute;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(14, 255, 255, 0.3) 0%,
+    rgba(1, 89, 156, 0.3) 100%
+  );
+  filter: blur(100px);
+  border-radius: 1000px;
+  pointer-events: none;
+
+  &_one {
+    width: 70vw;
+    height: 70vw;
+    top: -450px;
+    right: -700px;
+
+    @include screen("(max-width: 768px)") {
+      display: none;
+    }
+  }
+
+  &_two {
+    width: 80vw;
+    height: 80vw;
+    top: 376px;
+    right: calc(50vw - 400px);
+
+    @include screen("(max-width: 768px)") {
+      width: 415px;
+      height: 412px;
+      left: -200px;
+    }
+  }
+
+  &_three {
+    width: 80vw;
+    height: 80vw;
+    top: 90vh;
+    right: calc(50vw - 400px);
+
+    @include screen("(max-width: 768px)") {
+      width: 415px;
+      height: 412px;
+      top: 1500px;
+      left: -200px;
+    }
+  }
+
+  &_four {
+    width: 1121px;
+    height: 1106px;
+    top: 230vh;
+    right: calc(50vw - 800px);
+
+    @include screen("(max-width: 768px)") {
+      width: 415px;
+      height: 412px;
+      top: 1800px;
+      right: -200px;
+    }
+  }
+}
+
+.background_mebius {
+  width: 50vw;
+  position: absolute;
+  top: 0;
+  right: -10vw;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.HashTokenCopyIcon {
+  position: absolute;
+  right: 0;
+  top: -3px;
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

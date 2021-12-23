@@ -1,0 +1,126 @@
+@import "../../../static/styles/mixins.scss";
+
+.LandingRoadmapScrollContainer {
+  height: 120vh;
+}
+
+.LandingWrapper_page > div.LandingRoadmapPage {
+  padding: 0;
+}
+
+.LandingRoadmapPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  position: fixed;
+  overflow: hidden;
+
+  @include screen("(min-width: 1280px)") {
+    padding: 0 68px 90px 68px;
+  }
+
+  @include screen("(min-width: 768px) and (max-width: 1279px)") {
+    padding: 0 34px 46px 34px;
+  }
+
+  @include screen("(max-width: 767px)") {
+    padding: 0 15px;
+    justify-content: flex-start;
+  }
+
+  &_figure {
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    right: 5vw;
+    height: 100%;
+
+    @include screen("(max-width: 767px)") {
+      left: -100px;
+      height: 100%;
+    }
+  }
+
+  &_scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 28px;
+  }
+
+  &_blur {
+    content: ' ';
+    width: 512px;
+    height: 512px;
+    background: linear-gradient(151deg, rgba(196,200,254,1) 0%, rgba(173,78,180,1) 100%);
+    position: absolute;
+    top: 50vh;
+    right: -10vw;
+    filter: blur(194px);
+    transform: rotate(150deg);
+
+    @include screen("(max-width: 767px)") {
+      width: 277px;
+      height: 277px;
+    }
+  }
+}
+
+.RoadmapInfoContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 40vh 1vw 0 40vw;
+
+  @include screen("(max-width: 767px)") {
+    padding: 30vh 1vw 0 35vw;
+  }
+
+  &_title {
+    width: fit-content;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+    letter-spacing: 0.11em;
+    text-transform: capitalize;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    background: -webkit-linear-gradient(0.09turn, #eee, #5F3575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: #FFFFFF;
+
+    margin-bottom: 24px;
+  }
+
+  &_description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #FFFFFF;
+  }
+}
+
+.RoadmapPosition {
+  top: 50vh;
+  left: 50vw;
+}
+
+.RoadmapMoved {
+  top: 10vh;
+  left: 50vw;
+  opacity: 0;
+}
+
+.RoadmapPrepare {
+  top: 90vh;
+  left: 50vw;
+  opacity: 0;
+}

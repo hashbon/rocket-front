@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../../../static/styles/mixins";
+
+.header--title {
+  width: 100%;
+  height: $header-height;
+  display: flex;
+  flex: 0;
+
+  &_text {
+    height: $header-height;
+    padding: 0 8px;
+    display: flex;
+
+    span {
+      font-size: 20px;
+      line-height: $header-height;
+      font-weight: bold;
+    }
+  }
+
+  &_before {
+    height: $header-height;
+  }
+
+  &_after {
+    height: $header-height;
+  }
+
+  &_align {
+    &_content_left {
+      display: flex;
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    &_content_right {
+      display: flex;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    &_content_center {
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

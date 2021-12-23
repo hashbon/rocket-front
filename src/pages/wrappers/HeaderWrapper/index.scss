@@ -1,0 +1,80 @@
+@import "src/components/ui/variables";
+@import "src/static/styles/mixins";
+
+body {
+  background-image: url("../../../static/images/jpg/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  background-attachment: fixed;
+}
+
+.HeaderWrapper {
+  &__nav {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+    display: flex;
+    z-index: 100;
+
+    @include isMobile {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      position: fixed;
+    }
+  }
+
+  &__aside {
+    @extend .HeaderWrapper__nav;
+    position: relative;
+    z-index: 0;
+
+    @include isMobile {
+      display: none;
+    }
+  }
+
+  &__container {
+    flex: 1;
+  }
+
+  &__connect {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.HeaderWrapper_PageContainer {
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  display: flex;
+  justify-content: center;
+
+  @include screen(notFull) {
+    min-height: calc(100vh - 62px);
+  }
+
+  &_main {
+    box-sizing: border-box;
+    margin-top: 130px;
+    width: calc(100% - 200px);
+
+    @include isMobile {
+      margin: 80px 16px auto;
+      width: calc(100% - 32px);
+    }
+
+    @include screen(desktop) {
+      width: calc(100% - 300px);
+      max-width: 940px;
+    }
+
+    @include screen(tablet) {
+      width: calc(100% - 150px);
+    }
+  }
+
+}

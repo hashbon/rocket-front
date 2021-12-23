@@ -1,0 +1,91 @@
+@import "../../variables";
+@import "../../../../static/styles/mixins";
+
+.mobile-header {
+  &--wrapper {
+    cursor: default;
+    position: relative;
+    height: calc(#{$header-height} + 1px);
+
+    &_content {
+      width: 100%;
+      height: calc(#{$header-height} + 1px);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &--fake {
+    width: calc(100% - 24px);
+    height: calc(#{$header-height} + 1px);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    box-sizing: border-box;
+    margin: 0 12px;
+  }
+
+  &--shadow {
+    box-shadow: 0 0 23px 0 rgba(0,0,0, .05), 0 0 0 1px rgba(0,0,0, .023);
+  }
+
+  &--main {
+    width: 100vw;
+    min-height: $header-height;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+
+    &_up {
+      display: flex;
+      background-color: #ffffffe0;
+      height: 60px;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+    }
+
+    &_bottom {
+      height: calc(100vh - #{$header-height} - 1px);
+      display: flex;
+      flex-direction: column;
+      z-index: 5;
+
+      &_content {
+        width: 100%;
+        display: flex;
+        background-color: white;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        transition: .3s;
+      }
+
+      &_close {
+        background-color: rgba(0,0,0,.1);
+        width: 100%;
+        flex: 1 1;
+      }
+    }
+
+    &_left {
+      width: 60px;
+      height: $header-height;
+      margin: auto auto auto 0;
+      position: relative;
+    }
+
+    &_center {
+      flex: 1 1;
+      height: $header-height;
+      margin: auto 0 auto 0;
+      position: relative;
+    }
+
+    &_right {
+      width: 60px;
+      height: $header-height;
+      margin: auto 0 auto auto;
+      position: relative;
+    }
+  }
+}

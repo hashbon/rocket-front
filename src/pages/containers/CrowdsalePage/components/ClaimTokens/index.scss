@@ -1,0 +1,70 @@
+@import "../../../../../static/styles/mixins.scss";
+
+
+.ClaimTokens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+
+  &__address {
+    color: #5BB2FA;
+    font-weight: bold;
+  }
+  &__description {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin: 30px 0;
+  }
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+  }
+  &__done {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    opacity: .3;
+  }
+  &__button {
+    min-width: 102px;
+    height: 40px;
+    border-radius: 12px;
+    margin: 10px;
+
+    &--icon {
+      height: 35px;
+    }
+
+    &--label {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      & div {
+        margin-left: 10px;
+      }
+    }
+
+    &--bnb {
+      background: var(--ui-bnb-orange);
+      &--outline {
+        background: transparent;
+        border: 1px solid #F3BA2F;
+      }
+    }
+
+    &--eth {
+      background: #4761E2;
+
+      &--outline {
+        background: transparent;
+        border: 1px solid #4761E2;
+      }
+    }
+
+
+  }
+}

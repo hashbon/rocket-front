@@ -1,0 +1,72 @@
+@import "../../../../static/styles/variables";
+@import "../../../../static/styles/mixins";
+
+.box {
+  box-sizing: border-box;
+  position: relative;
+
+  &--bordered {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &--transparent {
+    background: transparent;
+  }
+
+  &--shadow {
+    background: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0, .025), 0 0 10px 0 rgba(0,0,0, .02);
+  }
+
+  &--overflow {
+    overflow: hidden;
+  }
+
+  &--background_pixels {
+    background-image: radial-gradient(#ececec 1px, rgba(0, 0, 0, 0) 1px), radial-gradient(#f3f3f3 1px, #ffffff 1px);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+  }
+
+  &--background_accent {
+    background-color: var(--ui-card-background-accent);
+  }
+  &--background_dark {
+    background-color: var( --ui-additional);
+  }
+
+  &--rounded {
+    border-radius: 20px;
+  }
+
+  &--padding {
+    @include screen(mobile) {
+      $spacer_grid_size: 6px;
+      @for $i from 1 through 4 {
+        &_vertical_#{$i} {
+          padding-top: $spacer_grid_size * $i;
+          padding-bottom: $spacer_grid_size * $i;
+        }
+
+        &_horizontal_#{$i} {
+          padding-left: $spacer_grid_size * $i;
+          padding-right: $spacer_grid_size * $i;
+        }
+      }
+    }
+    @include screen(notMobile) {
+      $spacer_grid_size: 9px;
+      @for $i from 1 through 4 {
+        &_vertical_#{$i} {
+          padding-top: $spacer_grid_size * $i;
+          padding-bottom: $spacer_grid_size * $i;
+        }
+
+        &_horizontal_#{$i} {
+          padding-left: $spacer_grid_size * $i;
+          padding-right: $spacer_grid_size * $i;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.WhyWeAwesomePage {
+  color: #ffffff;
+  width: 100%;
+  display: flex;
+  font-size: 18px;
+  margin-bottom: 40px;
+
+  @include screen(mobile) {
+    font-size: 16px;
+    word-break: break-word;
+  }
+
+  & a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &__wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    @include screen(notFull) {
+      padding: 0 20px;
+      width: 100%;
+    }
+  }
+  &__title {
+    line-height: 80px;
+    font-size: 60px;
+    color: white;
+    font-weight: 700;
+    margin: auto auto 30px;
+
+    @include screen(mobile) {
+      font-size: 46px;
+      line-height: 50px;
+      margin: auto auto 20px;
+    }
+  }
+
+  &__list {
+    list-style-type: disc;
+    padding: 15px;
+    line-height: 30px;
+
+    &__item {
+
+    }
+  }
+}

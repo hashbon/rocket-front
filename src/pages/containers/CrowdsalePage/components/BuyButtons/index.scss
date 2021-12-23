@@ -1,0 +1,135 @@
+@import "../../../../../static/styles/mixins";
+
+.BuyButtons {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include isMobile {
+    width: 100%;
+  }
+
+
+  &__invest {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 100%;
+    @include isMobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+
+    @include isMobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    &-input {
+      display: flex;
+      flex-direction: row;
+      background: #181B20;
+      border-radius: 6px;
+      align-items: center;
+      height: 70px;
+      width: 515px;
+      padding: 5px 205px 5px 5px;
+      border: 1px solid #181b20;
+      transition: border-color 150ms ease-in-out;
+      position: relative;
+
+      &_error {
+        position: absolute;
+        left: 10px;
+        top: -30px;
+        color: #b8b8b8 !important;
+        font-size: 14px;
+
+        @include isMobile() {
+          left: 8px;
+          top: -34px;
+          font-size: 12px;
+        }
+      }
+
+      @include isMobile {
+        height: 60px;
+        width: 100%;
+        //min-width: 290px;
+        padding: 5px;
+      }
+
+      &:focus-within {
+        border: 1px solid #fff;
+      }
+
+      &:hover:not(:focus-within){
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      &.error {
+        border: 1px solid #F03D3D;
+
+        & input {
+          color: #F03D3D !important;
+        }
+      }
+    }
+
+
+
+    &-button {
+      @include isMobile {
+        flex: 5;
+      }
+    }
+
+    &-side {
+      margin-left: -205px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @include isMobile {
+        margin-left: 0;
+        justify-content: flex-start;
+        margin-top: 24px;
+        width: 100%;
+      }
+    }
+
+    &-image {
+      @include isMobile {
+        flex: 1;
+        justify-content: flex-end;
+        align-items: flex-end;
+        display: flex;
+        //margin-left: 0;
+      }
+
+      width: 70px;
+      margin-left: 24px;
+      img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+  }
+}

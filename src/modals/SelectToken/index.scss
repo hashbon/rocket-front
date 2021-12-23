@@ -1,0 +1,280 @@
+@import "../../static/styles/mixins";
+.SelectToken {
+  &_main {
+    max-width: 940px;
+    background-color:  var(--ui-additional);
+    color: white;
+    height: 397px;
+
+    @include  screen(desktop) {
+      width: 940px;
+    }
+
+    @include  screen(tablet) {
+      width: 70vw;
+    }
+
+    @include isMobile {
+      width: 60vw;
+      height: 70vh;
+      min-width: 270px;
+      min-height: 257px;
+    }
+
+    &_icon {
+      margin: auto;
+      display: flex;
+      cursor: pointer;
+      svg {
+        width: 20px;
+        height: 20px;
+        margin: auto;
+        color: var(--ui-accent);
+      }
+    }
+  }
+
+  &_notSelected {
+    font-size: 16px;
+    padding: 16px 0;
+    color: deepskyblue;
+  }
+
+  &__head {
+    position: relative;
+    display: none;
+    @include isMobile {
+      font-size: 16px;
+      color: white;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      padding: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    &__back {
+      position: absolute;
+      left: 19px;
+      top: 16px;
+    }
+
+    &__text {
+      & span {
+        color:  var(--ui-accent);
+        font-weight: normal
+      }
+    }
+
+  }
+
+  &__columns {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    &__active-tab {
+      display: block !important;
+    }
+
+    @include isMobile {
+      height: calc(100% - 50px);
+    }
+    & > div {
+      padding: 43px;
+      position: relative;
+      @include isMobile {
+        padding: 16px;
+        flex: 1;
+        display: none;
+      }
+      @include screen(tablet) {
+        padding: 30px;
+      }
+    }
+
+
+
+    &__network {
+      width: 40%;
+      margin-left: 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      @include isMobile {
+        border-right: none;
+      }
+      &_list {
+        overflow: hidden;
+        overflow-y: auto;
+        height: 80%;
+        margin-top: 20px;
+      }
+
+      &_item {
+        color: white;
+
+        padding: 10px 12px 8px 0;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        opacity: .5;
+        overflow: hidden;
+        word-break: keep-all;
+        border-bottom: 1px solid transparent;
+
+        @include isMobile {
+          padding: 5px 15px;
+          font-size: 18px;
+          align-items: center;
+          margin: auto;
+        }
+
+        @include screen(tablet) {
+          font-size: 18px;
+        }
+
+        &-icon {
+          width: 32px;
+          height: 32px;
+          display: flex;
+          //background-color: gray;
+          margin-right: 8px;
+          border-radius: 10px;
+
+          svg {
+            width: 32px;
+            height: 32px;
+            margin: auto;
+          }
+        }
+
+        &-name {
+          margin-left: 25px;
+          @include screen(tablet) {
+            margin-left: 10px;
+          }
+        }
+
+
+        &-active {
+          color: #FFFFFF;
+          //font-size: 30px;
+          //line-height: 30px;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__token {
+      width: 60%;
+
+      &__heading {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        height: 50px;
+
+        @include isMobile {
+          height: 0;
+        }
+        &-search {
+          flex: 1;
+          margin-left: 30px;
+          margin-top: -5px;
+          position: relative;
+
+          @include isMobile {
+            position: absolute;
+            bottom: 32px;
+            width: calc(100% - 32px);
+            margin-left: 0;
+          }
+
+          @include screen(tablet) {
+            margin-left: 15px;
+          }
+
+          & input {
+            font-size: 20px !important;
+            @include screen(notFull) {
+              font-size: 16px !important;
+            }
+          }
+
+          &__text {
+            position: absolute;
+            bottom: -22px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            opacity: .3;
+          }
+        }
+      }
+    }
+
+    &_title {
+      font-size: 22px;
+      color: white;
+      @include isMobile {
+        display: none;
+      }
+
+      @include screen(tablet) {
+        font-size: 18px;
+      }
+
+      span {
+        color:  var(--ui-accent);
+        font-weight: normal
+      }
+    }
+  }
+
+  &_currency_item {
+    width: 100%;
+    padding: 9px 15px 9px 0;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+
+    @include isMobile {
+      padding: 7px 10px;
+      font-size: 18px;
+    }
+    @include screen(tablet) {
+      font-size: 20px;
+    }
+
+    &_title {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    &_address {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+
+    &__active {
+      color:  var(--ui-accent);
+    }
+  }
+
+  &_tokens {
+    width: 100%;
+    height: 80%;
+    margin-top: 15px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    @include isMobile {
+      height: 70%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../variables";
+@import "../../../../static/styles/mixins";
+
+.header--icon {
+  width: 100%;
+  height: $header-height;
+  display: flex;
+
+  &_icon {
+    margin: auto;
+    display: flex;
+
+    svg {
+      margin: auto;
+      color: $header-icon-color;
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import "../../../static/styles/mixins";
+
+
+.CrowdsalePage__info-time {
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.CrowdsalePage {
+  &_wrapper {
+    color: #fff;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1100px;
+    @include isMobile {
+      width: 100%;
+      min-width: 320px;
+      padding: 0 25px;
+
+    }
+
+    @include screen(tablet) {
+      width: 100%;
+      min-width: 768px;
+      padding: 0 40px;
+    }
+
+
+  }
+
+  &__double-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 24px;
+
+
+    &_title{
+      text-align: center;
+      word-break: break-word;
+      font-size: 34px;
+      font-weight: 600;
+      color: #fff;
+    }
+    &_description {
+      font-weight: 600;
+      font-size: 58px;
+      color: var(--ui-accent);
+    }
+  }
+  &_main {
+    &-heading {
+      margin-top: 60px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 68px;
+      line-height: 75px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      text-transform: capitalize;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin-bottom: 24px;
+      color: #fff;
+      @include screen(notFull) {
+        font-size: 50px;
+      }
+    }
+
+    &-description {
+      font-style: normal;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      max-width: 800px;
+
+      a {
+        text-decoration: underline;
+        &:hover {
+          color: rgb(2, 167, 223);
+        }
+      }
+    }
+
+  }
+
+  &_second {
+    &-heading {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 50px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      text-transform: capitalize;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+  }
+
+  &_linkButtons {
+    display: flex;
+    flex-direction: row;
+    width: 976px;
+    flex-basis: 25%;
+    //gap: 20px;
+    justify-content: center;
+    margin: -5px -5px;
+
+
+    @include isMobile {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    @include screen(tablet) {
+      width: 100%;
+      min-width: 592px;
+    }
+
+    &-button {
+      margin: 5px;
+      min-width: 230px;
+
+      @include screen(tablet) {
+        min-width: 156px;
+        width: 25%;
+      }
+
+      @include isMobile {
+        //width: 50%;
+        flex-basis: calc(50% - 10px);
+        min-width: 125px;
+      }
+
+
+    }
+  }
+
+}
+
+.bg-bnb {
+  background: var(--ui-bnb-orange);
+}
+.bg-eth {
+  background: var(--ui-eth-blue);
+}

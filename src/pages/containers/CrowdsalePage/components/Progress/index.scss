@@ -1,0 +1,90 @@
+.CrowdsaleProgress {
+  width: 100%;
+  &_title {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+
+  &_progress, &_progress-bar {
+    display: flex;
+  }
+
+  &_progress {
+    padding: 0px;
+    height: 70px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 16px;
+    small {
+      font-weight: 300;
+    }
+  }
+
+  &_range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    svg {
+      height: 32px;
+      margin: -4px 0 0 12px;
+    }
+    .softcap {
+      padding-left: 58px;
+    }
+  }
+
+  &_progress-bar {
+    border-radius: 6px;
+    align-items: flex-end;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    background: var(--ui-gradient-primary);
+    &-amount {
+      font-size: 24px;
+    }
+    &-participants {
+      font-weight: 400;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    &.softcap {
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid #a8beef;
+      background: linear-gradient(45deg, #4ddaea 0%, #8bacf4 100%);
+    }
+    &.softcap + div {
+      border-radius: 0;
+      border-left: 1px solid #86a5eb;
+      background: linear-gradient(45deg, #5889ef 0%, #8c61f6 100%);
+      position: relative;
+      &:after {
+        content: '';
+        width: 2px;
+        position: absolute;
+        right: 0;
+        top: -15%;
+        z-index: 1;
+        height: 130%;
+        background-color: white;
+      }
+    }
+  }
+}

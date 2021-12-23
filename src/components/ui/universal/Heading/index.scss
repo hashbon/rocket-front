@@ -1,0 +1,104 @@
+@import "../../../../static/styles/mixins.scss";
+
+.heading {
+  width: 100%;
+  font-weight: 500;
+  z-index: 1;
+  color: white;
+
+  &--line {
+    position: relative;
+  }
+
+  &--bold {
+    font-weight: 500;
+  }
+
+  &--pointer {
+    cursor: pointer;
+  }
+
+  &--underline {
+    width: 100%;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    z-index: 0;
+    opacity: 0.2;
+  }
+
+  &_1 {
+    font-size: 40px;
+
+    .heading--underline {
+      height: 17px;
+      bottom: 7px;
+    }
+
+    @include screen(desktop) {
+      font-size: 50px;
+    }
+
+    @include screen(tablet) {
+      font-size: 30px;
+    }
+
+    @include screen(mobile) {
+      font-size: 26px;
+    }
+  }
+
+  &_2 {
+    font-size: 22px;
+
+    .heading--underline {
+      height: 12px;
+      bottom: -3px;
+    }
+  }
+
+  &_3 {
+    font-size: 18px;
+
+    .heading--underline {
+      height: 9px;
+      bottom: -2px;
+    }
+  }
+
+  &_4 {
+    font-size: 16px;
+
+    .heading--underline {
+      height: 7px;
+      bottom: -1px;
+    }
+  }
+
+  &_5 {
+    font-size: 14px;
+
+    .heading--underline {
+      height: 7px;
+      bottom: -1px;
+    }
+  }
+
+  &_6 {
+    font-size: 12px;
+
+    .heading--underline {
+      height: 5px;
+      bottom: -1px;
+    }
+  }
+
+  &_7 {
+    font-size: 10px;
+
+    .heading--underline {
+      height: 3px;
+      bottom: -1px;
+    }
+  }
+}

@@ -1,0 +1,200 @@
+@import "../../../../../static/styles/mixins.scss";
+
+.Astronaut {
+  width: 100%;
+  //min-width: 1100px;
+  height: 900px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  @include screen(notFull) {
+    height: 100%;
+  }
+
+  &__container {
+    overflow: hidden;
+    width: 100%;
+    min-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include isMobile {
+      width: 100%;
+      min-width: 320px;
+      flex-direction: column-reverse;
+
+    }
+
+    @include screen(tablet) {
+      width: 100%;
+      min-width: 768px;
+      flex-direction: column-reverse;
+
+    }
+  }
+
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+
+    &-stars {
+      @extend .Astronaut__bg;
+      background-image: url("img/bg_stars.png");
+    }
+
+    &-galaxy {
+      @extend .Astronaut__bg;
+      top: 100px;
+      height: 85%;
+      opacity: .4;
+      background-image: url("img/bg_galaxy.png");
+    }
+
+    &-main {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("img/astronaut-min.png");
+      height: 100%;
+      width: calc(60% - 354px);
+      margin-top: 100px;
+      flex:1;
+      position: absolute;
+      left: 50px;
+
+      @include screen(tablet) {
+        position: relative;
+        min-height: 600px;
+        width: 50%;
+        align-self: flex-start;
+
+      }
+
+      @include isMobile {
+        min-height: 450px;
+        position: relative;
+        width: 80%;
+        left: 0;
+      }
+    }
+  }
+
+  &__tablet_props {
+    border-radius: 40px;
+    border: 3px solid rgba(32, 141, 224, 1);
+    @include isMobile {
+      border-width: 1px;
+    }
+  }
+  &__tablet {
+    @extend .Astronaut__tablet_props;
+    max-width: 709px;
+    padding: 18px;
+    background: rgba(32, 141, 224, 0.2);
+    box-shadow: 0 0 34px 0 rgba(83, 120, 250, 0.44);
+    margin-left: calc(50% - 354px);
+
+    @include screen(notFull) {
+      margin-left: 0;
+    }
+
+    @include isMobile {
+      width: 100%;
+      padding: 12px;
+    }
+
+
+    &__container {
+      z-index: 1;
+      width: 709px;
+      height: 359px;
+      flex: 1.5;
+      display: flex;
+      justify-content: center;
+
+      @include isMobile {
+        width: 100%;
+        padding: 0 20px;
+      }
+
+    }
+
+    &-inside {
+      @extend .Astronaut__tablet_props;
+      height: 100%;
+      border-radius: 28px;
+      position: relative;
+      padding: 31px 36px;
+
+      @include isMobile {
+        padding: 24px 29px;
+      }
+
+    }
+
+    &-icons {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 100%;
+      opacity: 0.6;
+
+      @include isMobile {
+        bottom: 0;
+        left:0;
+        flex-direction: row;
+
+        & > img:nth-child(2) {
+          order: 3;
+          margin-bottom: -10px;
+        }
+      }
+
+    }
+
+    &-text {
+      padding-right: 80px;
+      width: 590px;
+      height: 100%;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: #FFFFFF;
+
+      @include isMobile {
+        font-size: 16px;
+        padding-right: 0;
+        padding-bottom: 100px;
+      }
+
+      @include screen(notFull) {
+        width: 100%;
+      }
+
+
+      &_link {
+        text-decoration: underline;
+        color: rgb(255, 255, 255);
+        transition: color 150ms ease-in-out;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+
+  }
+}

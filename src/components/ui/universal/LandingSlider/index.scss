@@ -1,0 +1,114 @@
+@import "../../../../static/styles/mixins.scss";
+
+
+.LandingSlider {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 365px;
+
+  &_icon {
+    color: white;
+    width: 40px;
+    height: 40px;
+    top: -140px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    svg {
+      fill: white;
+    }
+
+    @include screen("(max-width: 767px)") {
+      width: 28px;
+      height: 28px;
+      top: -145px;
+      svg {
+        width: 28px !important;
+        height: 28px !important;
+      }
+    }
+  }
+
+  @include screen("(max-width: 767px)") {
+    min-height: 232px;
+  }
+
+  &_control {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 77px;
+
+    @include screen("(max-width: 767px)") {
+      flex-direction: column;
+    }
+  }
+
+  &_title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    width: 100%;
+    text-align: center;
+
+    @include screen("(max-width: 767px)") {
+      font-size: 18px;
+      line-height: 48px;
+    }
+  }
+
+  &_arrows {
+    width: 96px;
+    display: flex;
+    justify-content: space-between;
+
+    > img {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include screen("(max-width: 767px)") {
+      width: 100%;
+    }
+  }
+
+  &_partners {
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 152px;
+
+    &_partner-image {}
+
+    & .item {
+      width: 214px;
+      height: 214px;
+      margin-right: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('./img/background.png');
+      background-repeat: repeat;
+      border-radius: 10px;
+      background-color: #05131a;
+      border: 2px solid #1d3544;
+
+      img {
+        max-width: 200px;
+        margin: auto;
+      }
+
+      @include screen("(max-width: 767px)") {
+        width: 100%;
+      }
+    }
+  }
+}

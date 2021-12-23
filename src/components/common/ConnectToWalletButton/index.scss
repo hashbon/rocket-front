@@ -1,0 +1,56 @@
+@import "src/static/styles/mixins";
+
+.WalletButton {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  min-width: 110px;
+
+  &__balance {
+    color: #fff;
+    font-size: 16px;
+    margin-right: 15px;
+  }
+  @include isMobile {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__button {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+
+    @include isMobile {
+      font-size: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color:  var(--ui-accent);
+      position: absolute;
+      top: 20px;
+    }
+
+  }
+
+  &__indicator {
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+    margin-left: 20px;
+
+    @include isMobile {
+      margin-left: 0;
+    }
+
+    &.green {
+      background: green;
+    }
+
+    &.red {
+      background: red;
+    }
+  }
+}

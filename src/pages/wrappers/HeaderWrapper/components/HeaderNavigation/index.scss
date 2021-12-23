@@ -1,0 +1,160 @@
+@import "src/components/ui/variables";
+@import "src/static/styles/mixins";
+
+.HeaderNavigation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  @include isMobile {
+    width: 100%;
+    padding: 0;
+  }
+  @include screen(desktop) {
+    width: 100%;
+    padding-top: 30px;
+  }
+  &__collapse {
+    transition: all .5s ease-in-out;
+    &.hide {
+      display: none;
+    }
+  }
+  &__container {
+      display: flex;
+      justify-content: center;
+      @include isMobile {
+        justify-content: normal;
+        display: block;
+      }
+  }
+
+  &__list {
+    color: rgba(255,255,255, 0.5);
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 110px;
+    @include isMobile {
+      margin-top: 55px;
+      margin-bottom: 130px;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    box-sizing: border-box;
+    padding: 8px 0;
+    cursor: pointer;
+    @include isMobile {
+      padding: 4px;
+      width: 33.3%;
+      text-align: center;
+    }
+    &_title {
+      user-select: none;
+      position: relative;
+      box-sizing: border-box;
+      padding: 8px 0;
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 26px;
+      line-height: 27px;
+    }
+    &.active {
+        color: white !important;
+        font-weight: 500;
+        text-decoration-line: underline;
+    }
+    &:hover {
+        color: white !important;
+        text-decoration-line: underline;
+    }
+  }
+}
+
+.MainHeader {
+  height: 65px;
+  width: 100%;
+  padding: 0 20px;
+
+  &_tumblerWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    &__container {
+      width: 300px;
+    }
+  }
+
+  &_logoWrapper {
+    width: 200px;
+    margin: auto 0 auto 0;
+    cursor: pointer;
+    z-index: 2;
+    .first_part {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: auto auto auto 0;
+      margin-left: 15px;
+    }
+    .second_part {
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: auto auto auto 5px;
+      @include isMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+  }
+
+  &__menu {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    @include isMobile {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    svg {
+      height: 45px;
+      @include screen(mobile) {
+        height: 30px;
+      }
+      @include screen(tablet) {
+        height: 40px;
+      }
+    }
+  }
+
+  &__connect {
+    display: none;
+    position: absolute;
+    right: 0;
+    @include isMobile {
+      display: flex;
+    }
+  }
+}

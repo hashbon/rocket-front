@@ -1,0 +1,56 @@
+@import "../../variables";
+
+.Sidebar {
+  &_wrapper {
+    padding: 24px;
+  }
+
+  &_item {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #111;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #555;
+
+      svg {
+        color: #bbb;
+      }
+    }
+
+    &_active {
+      color: $primary !important;
+
+      svg {
+        color: $primary !important;
+      }
+    }
+
+    &_wrapper {
+      display: flex;
+    }
+
+    &_icon {
+      width: 30px;
+      margin: auto 20px auto 0;
+      display: flex;
+
+      svg {
+        height: 20px;
+        color: #b6c7d6;
+        margin: auto;
+      }
+    }
+
+    &_title {
+      font-size: 18px;
+
+      span {
+
+      }
+    }
+  }
+}

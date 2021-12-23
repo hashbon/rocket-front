@@ -1,0 +1,19 @@
+@import "../../variables";
+@import "../../../../static/styles/mixins";
+
+.IconUniversal {
+  width: 100%;
+  display: flex;
+
+  &_icon {
+    margin: auto;
+    display: flex;
+
+    svg {
+      margin: auto;
+      height: inherit;
+      width: inherit;
+      color: $header-icon-color;
+    }
+  }
+}

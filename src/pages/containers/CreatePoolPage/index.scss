@@ -1,0 +1,19 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.CreatePoolForm {
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @include isMobile {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__button {
+      justify-self: flex-end;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.Person {
+  margin: auto auto 40px;
+
+  &_photo {
+    width: 230px;
+    height: 230px;
+    border-radius: 10px;
+    background-color: black;
+    background-position: top center;
+    background-size: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    @include screen("(max-width: 1130px)") {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &_name {
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+  }
+
+  &_description {
+    width: 100%;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,58 @@
+:root {
+  --ui-button-secondary-background: rgb(256, 256, 255);
+  //--ui-button-secondary-background: rgb(226, 226, 226);
+  --ui-button-secondary-active-background: #FBF8F6;
+  --ui-button-negative-background: linear-gradient(to right bottom, rgb(210, 93, 84) 0%, rgb(163, 82, 73) 100%);
+  --ui-button-negative-background-active: #F76646;
+  --ui-foreground-primary: #000;
+  --ui-foreground-secondary: rgb(55, 148, 219);
+  //--ui-foreground-secondary: rgb(134, 134, 134);
+  --ui-contrast-primary: white;
+  --uit-background: white;
+  --ui-primary: #333;
+  --ui-primary-light: #333;
+  --ui-background-secondary: #F5F1EE;
+  --ui-gradient-primary: linear-gradient(45deg, #A253FA 0%, #00CBE3 100%);
+  --ui-yellow-gradient: rgba(255, 188, 57, 0.65);
+  --ui--negative-gradient-primary: linear-gradient(45deg, #333 0%, #000 100%);
+  --ui-negative: rgb(210, 93, 84);
+  --ui-bnb-orange: linear-gradient(273.78deg, #E2900A -14.18%, #E2AC0A 115.94%);
+  --ui-eth-blue: linear-gradient(92.7deg, #BFCAF2 -8.45%, #8B9FEA 109.39%);
+  --outlineBorderColor: white;
+
+  /* --- REDESIGN --- */
+  --ui-accent: #3794DB;
+  --ui-additional: #01142D;
+  --ui-acivated: #7AFA78;
+  --ui-error: #FF655B;
+
+  --ui-card-background: #000;
+  --ui-card-background-accent: #3794DB;
+
+  --tabbarColor: #444;
+  --tabbarOriginalBorderColor: rgba(0,0,0,0.4);
+  --tabbarBorderColor: black;
+  --tabbarHeaderColor: #151515;
+
+  --formBackgroundColor: #f8f8f8;
+  --secondaryInputDescriptionColor: #333;
+
+  --destructive: #e64646;
+  --text_action_counter: #818c99;
+  --text_link: #4986cc;
+  --text_link_hightlighted_background: #000000;
+  --text_muted: #2c2d2e;
+  --text_name: #4986cc;
+  --text_placeholder: #818c99;
+  --text_primary: #000000;
+  --text_secondary: #818c99;
+  --text_subhead: #6d7885;
+  --text_tertiary: #99a2ad;
+
+  --dynamic_blue: #3f8ae0;
+  --dynamic_gray: #a3adb8;
+  --dynamic_red: #ff3347;
+  --dynamic_green: #4bb34b;
+  --dynamic_orange: #ffa000;
+  --dynamic_violet: #792ec0;
+}

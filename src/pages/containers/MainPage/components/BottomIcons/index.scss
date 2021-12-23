@@ -1,0 +1,17 @@
+@import "src/static/styles/mixins";
+
+.BottomIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding-bottom: 50px;
+
+
+  @include screen(mobile) {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}

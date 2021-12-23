@@ -1,0 +1,13 @@
+.pagination {
+
+  &__more-button {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    cursor: pointer;
+
+    span {
+      margin: auto;
+    }
+  }
+}

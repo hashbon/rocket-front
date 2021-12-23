@@ -1,0 +1,27 @@
+.FAQPage {
+  width: 100%;
+  display: flex;
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  &_wrapper {
+    width: 960px;
+    margin: 50px auto;
+
+    &_title {
+      width: 100%;
+      text-align: center;
+      display: flex;
+
+      span {
+        margin: auto;
+        line-height: 80px;
+        font-size: 60px;
+        color: white;
+        font-weight: 700;
+      }
+    }
+  }
+}

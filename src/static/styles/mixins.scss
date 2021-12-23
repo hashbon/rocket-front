@@ -1,0 +1,157 @@
+@mixin mq ($width, $type: max) {
+  @media (#{$type}-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin mediaHeight ($height, $type: max) {
+  @media (#{$type}-height: #{$height}) {
+    @content;
+  }
+}
+
+@mixin isMobile {
+  @include screen(mobile) {
+    @content;
+  }
+}
+
+@mixin full {
+  @include screen(desktop) {
+    @content;
+  }
+}
+
+@mixin noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin screen($size) {
+  $extra: "(min-width: 1920px)";
+  $large: "(min-width: 1440px)";
+  $desktop: "(min-width: 1280px)";
+  $tablet: "(min-width: 769px) and (max-width: 1023px)";
+  $mobile: "(max-width: 768px)";
+  $notFull: "(max-width: 1023px)";
+  $notMobile: "(min-width: 769px)";
+
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  }
+  @else if $size == notMobile {
+    @media only screen and #{$notMobile} {
+      @content;
+    }
+  }
+  @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  }
+  @else if $size == notFull {
+    @media only screen and #{$notFull} {
+      @content;
+    }
+  }
+  @else if $size == large {
+    @media only screen and #{$large} {
+      @content;
+    }
+  }
+  @else if $size == extra {
+    @media only screen and #{$extra} {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+
+@mixin box($width, $height:$width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  @if $default {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}

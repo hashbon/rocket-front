@@ -1,0 +1,76 @@
+@import "../../../../../static/styles/mixins.scss";
+
+
+.InvestorClaim {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include screen(mobile) {
+    width: 100%;
+  }
+
+  &__description {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin: 30px 0;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &--item {
+      margin-bottom: 15px;
+
+      & input {
+        border-bottom-color: #fff !important;
+      }
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    &--logout {
+      margin-top: 20px  ;
+      display: flex;
+      justify-content: center;
+    }
+
+    &--item {
+      width: 140px;
+      height: 40px;
+      background: linear-gradient(276.5deg, #A253FA -8.34%, #00CBE3 87.38%);
+      border-radius: 12px;
+      font-style: normal;
+      font-weight: bold;
+
+      & .button--label {
+        font-size: 18px !important;
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      &_outline {
+        border: 1px solid #fff;
+        background: transparent;
+      }
+    }
+  }
+
+  &__verify {
+    width: 500px;
+    min-height: 250px;
+    @include screen(mobile) {
+      width: 100%;
+    }
+  }
+}

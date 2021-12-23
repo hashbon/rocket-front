@@ -1,0 +1,44 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.TeamPage {
+  width: 100%;
+  display: flex;
+
+  &_back {
+    background-size: 1100px;
+    background-position: center 200px;
+    background-repeat: no-repeat;
+  }
+
+  &_wrapper {
+    width: 1130px;
+    margin: 50px auto;
+
+    &_title {
+      width: 100%;
+      text-align: center;
+      display: flex;
+
+      span {
+        margin: auto;
+        line-height: 80px;
+        font-size: 60px;
+        color: white;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &_items {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include isMobile {
+      display: grid;
+      grid-gap: 1px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

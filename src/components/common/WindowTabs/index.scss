@@ -1,0 +1,106 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.WindowTabs {
+
+  @include isMobile {
+  }
+
+  &__buttons-item {
+    display: flex;
+
+    @include isMobile {
+      margin-bottom: 20px;
+
+      &:last-child,
+      &--active {
+        margin-bottom: 0;
+      }
+    }
+
+    &--inactive {
+      @include isMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 10px 25px;
+    font-size: 20px;
+    color: #fff;
+
+    &:disabled {
+      color: rgba(#fff, 0.3);
+    }
+
+    @include isMobile {
+      font-size: 16px;
+      border-radius: 16px;
+      background: var( --ui-additional);
+    }
+
+    &--active {
+      border-radius: 30px 30px 0 0;
+      background: var( --ui-additional);
+
+      @include isMobile {
+        position: relative;
+        border-radius: 16px 16px 0 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+	  top: 10px;
+	  left: 12px;
+          min-width: 12px;
+          height: 12px;
+	  border: 1px solid #fff;
+	  border-right: none;
+	  border-bottom: none;
+	  transform: rotate(-45deg);
+        }
+      }
+    }
+
+    @include isMobile {
+      padding: 7px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    @include isMobile {
+      flex-direction: column
+    }
+  }
+
+  &__buttons-header {
+  }
+
+  &__content {
+    padding: 24px 30px;
+    color: #fff;
+    background: var( --ui-additional);
+    border-radius: 0 30px 30px 30px;
+
+    @include isMobile {
+      padding: 20px 16px;
+      border-radius: 0 0 16px 16px;
+    }
+
+    &--first {
+      border-top-left-radius: 30px;
+
+      @include isMobile {
+        border-top-left-radius: 0px;
+      }
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

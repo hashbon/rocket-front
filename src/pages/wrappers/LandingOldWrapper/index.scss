@@ -1,0 +1,8 @@
+@import "src/components/ui/variables";
+@import "src/static/styles/mixins";
+
+.LandingWrapper {
+  &_page > div {
+    padding-top: 100px;
+  }
+}

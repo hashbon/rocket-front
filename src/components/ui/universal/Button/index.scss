@@ -1,0 +1,541 @@
+@import "../../../../static/styles/variables";
+@import "../../../../static/styles/mixins";
+@import "../../variables";
+
+.button {
+  //justify-content: center;
+  border: none;
+  //display: inline-flex;
+  background: var(--ui-gradient-primary);
+  position: relative;
+  border-radius: $button-border-radius;
+  height: $button-height;
+  //align-items: center;
+  user-select: none;
+  padding: 0 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+  color: var(--ui-primary);
+  overflow: hidden;
+
+  &:not(.outline) {
+    color: var(--ui-contrast-primary);
+  }
+
+  &.loading {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &.rounded {
+    border-radius: $button-border-radius-rounded;
+  }
+
+  &.shadow {
+    box-shadow: 0 8px 25px -9px rgba(2, 51, 125, 0.24);
+  }
+
+  &:after {
+    content: '';
+    background: var(--ui--negative-gradient-primary);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:active {
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &.small {
+    height: $button-small-height;
+    padding: 0 24px;
+
+    &.rounded {
+      border-radius: $button-border-radius-rounded-small;
+    }
+  }
+
+  &.medium {
+    height: $button-medium-height;
+    padding: 0 29px;
+
+    @include screen(tablet) {
+      padding: 0 18px;
+    }
+
+    @include screen(tablet) {
+      padding: 0 24px;
+
+    }
+
+    &.rounded {
+      border-radius: $button-border-radius-rounded-medium;
+    }
+  }
+
+  &.large {
+    height: $button-large-height;
+    text-align: center;
+
+    &.rounded {
+      border-radius: 30px;
+    }
+  }
+
+  &.hyper {
+    height: $button-large-height;
+    text-align: center;
+    width: 100%;
+
+    @include isMobile {
+      height: $button-medium-height;
+    }
+
+    @include screen(tablet) {
+      height: $button-large-height;
+    }
+
+    @include screen(desktop) {
+      height: $button-hyper-height;
+    }
+
+    .button--cont {
+      .button--label {
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 700;
+        @include screen(tablet) {
+          font-size: 16px;
+        }
+
+        @include isMobile {
+          font-size: 14px;
+        }
+      }
+      //justify-content: center;
+    }
+  }
+
+  &.biggest {
+    height: 60px;
+    text-align: center;
+    width: 100%;
+
+    .button--cont {
+      .button--label {
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &.pre_hyper {
+    height: $button-large-height;
+    text-align: center;
+
+    @include isMobile {
+      height: $button-medium-height;
+    }
+
+    @include screen(tablet) {
+      height: $button-large-height;
+    }
+
+    @include screen(desktop) {
+      height: $button-hyper-height;
+    }
+
+    .button--cont {
+      .button--label {
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 700;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        @include screen(tablet) {
+          font-size: 16px;
+        }
+
+        @include isMobile {
+          font-size: 14px;
+        }
+      }
+      //justify-content: center;
+    }
+  }
+
+  &.hyper.rounded {
+    border-radius: 30px;
+  }
+
+  &.biggest.rounded {
+    border-radius: 16px;
+  }
+
+  &.pre_hyper.rounded {
+    border-radius: 40px;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &.secondary {
+    background: var(--ui-button-secondary-background);
+    color: var(--ui-foreground-secondary);
+
+    &:after {
+      background: inherit;
+      color: black;
+    }
+  }
+
+  &.negative {
+    background: var(--ui-negative);
+    opacity: .8;
+
+    &:after {
+      background: var(--ui-negative);
+    }
+  }
+
+  &.violet {
+    background: #a253fa;
+    background: linear-gradient(45deg, #A253FA 0%, #00CBE3 100%);
+
+    &:after {
+      background: #a253fa;
+    }
+  }
+
+  &.blue {
+    background: #3d73a2;
+    opacity: .95;
+
+    &:after {
+      background: #3d73a2;
+    }
+  }
+
+  &.negative_outline {
+    color: var(--ui-negative);
+    background: var(--ui-negative);
+
+    &:after {
+      background: var(--ui-negative);
+    }
+
+    &:hover, &:active {
+      opacity: .8;
+      color: var(--ui-contrast-primary);
+    }
+  }
+
+  &.outline_white {
+    background: transparent;
+    border: 1px solid  var(--ui-accent);
+    transition: background 150ms ease-in-out;
+    border-radius: 12px;
+    font-size: 12px;
+    span {
+      font-weight: 300;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+  &.outline_gray {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: border 150ms ease-in-out;
+    border-radius: 4px;
+    font-size: 12px;
+    span {
+      font-weight: 300;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    &:hover {
+      border-color:  var(--ui-accent);
+    }
+
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+
+    &.large {
+      height: $button-large-height;
+      text-align: center;
+
+      .button--cont {
+        //justify-content: center;
+      }
+    }
+  }
+
+  /* --- Redesign --- */
+  &.accent {
+    background: var(--ui-accent);
+    border: 1px solid rgba(0,0,0,0.09);
+    color: #ffffff;
+    transition: background 150ms ease-in-out;
+
+    &:after {
+      display: none;
+    }
+
+    &:active {
+      background: #3793ca;
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+  &.outline-additional {
+    background: var(--ui-additional);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    transition: background 150ms ease-in-out;
+
+    &:after {
+      display: none;
+    }
+
+    &:active {
+      background: var(--ui-additional);
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+
+  /* --- Redesign End --- */
+
+  &.white {
+    background: var(--outlineBorderColor);
+    border: 1px solid rgba(0,0,0,0.09);
+    color: var(--ui-card-background-accent);
+    transition: background 150ms ease-in-out;
+
+    &:after {
+      display: none;
+    }
+
+    &:active {
+      background: rgb(245,245,245);
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+  &.bnb {
+    background: var(--ui-bnb-orange);
+    color: #fff;
+    font-size: 20px;
+    line-height: 23px;
+    height: 60px;
+    min-width: 200px;
+    width: 100%;
+
+    &:after {
+      display: none;
+    }
+
+    &:active {
+      background: var(--ui-bnb-orange)
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+  &.eth {
+    background: var(--ui-eth-blue);
+    color: #fff;
+    font-size: 20px;
+    line-height: 23px;
+    height: 60px;
+    min-width: 200px;
+    width: 100%;
+
+
+    &:after {
+      display: none;
+    }
+
+    &:active {
+      background: var(--ui-eth-blue)
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.6);
+    transition: background 150ms ease-in-out;
+
+    &:after {
+      display: none;
+    }
+
+    &:hover {
+      color: white;
+      border-color: white;
+    }
+
+    .button--label {
+      transition: color 150ms ease-in-out;
+    }
+  }
+
+  &--outline_helper {
+    background: inherit;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    transition: opacity 150ms ease-in-out;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-clip: padding-box;
+      border: 1px solid transparent;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: calc(#{$button-border-radius} - 1px);
+    }
+
+    .button.rounded &:after {
+      border-radius: $button-border-radius-rounded;
+    }
+
+    .button.rounded.small &:after {
+      border-radius: $button-border-radius-rounded-small;
+    }
+
+    .button.negative_outline & {
+      background: var(--ui-button-negative-background);
+    }
+
+    .button:hover & {
+      opacity: 0;
+    }
+  }
+
+  &--loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    z-index: 5;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: button--loader_animation 1s infinite linear;
+      color: var(--ui-contrast-primary);
+    }
+  }
+
+  &--label {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+
+    .button.small & {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    .button.medium & {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25px;
+      @include screen(mobile) {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 15px;
+      }
+
+      @include screen(tablet) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 17px;
+      }
+    }
+
+    .button.outline_white & {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 14px;
+    }
+  }
+
+  &--cont {
+    position: relative;
+    z-index: 2;
+    //align-items: center;
+    //display: flex;
+
+    .button.loading & {
+      opacity: 0;
+    }
+  }
+}
+
+.button-full-width {
+  width: 100%;
+}
+
+@keyframes button--loader_animation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+

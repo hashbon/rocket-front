@@ -1,0 +1,27 @@
+@import "src/static/styles/variables";
+@import "src/static/styles/mixins";
+
+.SwapFormOffer {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  justify-content: center;
+  color: var(--ui-accent);
+  &_Token {
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    &_Symbol {
+      padding-left: 5px;
+    }
+    &_Net {
+      width: 100%;
+      margin: 0 5px;
+      text-align: center;
+    }
+  }
+  &_Separator {
+    margin: 0 5px;
+  }
+}

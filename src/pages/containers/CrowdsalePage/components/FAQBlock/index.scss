@@ -1,0 +1,42 @@
+@import "../../../../../static/styles/mixins";
+
+.FAQBlock {
+  width: 100%;
+  display: flex;
+
+  &_wrapper {
+    width: 1105px;
+    margin: 0 auto;
+    background-color: #1D1D1D;
+    box-sizing: border-box;
+    padding: 63px 20px;
+    display: flex;
+    color: white;
+    border-radius: 20px;
+
+    @include screen("(max-width: 1280px)") {
+      margin: 0 16px;
+      width: calc(100% - 32px);
+    }
+
+    &_content {
+      margin: auto;
+      font-size: 48px;
+      line-height: 58px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+
+      span {
+        transition: all 100ms ease-in;
+        text-decoration: underline;
+      }
+
+      &:hover {
+        span {
+          color: #0372C7;
+        }
+      }
+    }
+  }
+}

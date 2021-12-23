@@ -1,0 +1,55 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.EarnPage {
+  margin: auto;
+  max-width: 840px;
+  padding-top: 20px;
+  width: 100%;
+  @include screen(mobile) {
+    max-width: 480px;
+  }
+
+  &__chainChange {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.EarnBlock__rangeButtons {
+  display: flex;
+
+  & > button {
+    padding: 0 5px !important;
+    width: 30px;
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.ModalCollect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_EarnedLabel {
+    font-weight: bold;
+  }
+  &_EarnedValue {
+    font-size: 24px;
+  }
+  &_EarnedValueUSD {
+    font-size: 14px;
+  }
+  &_action {
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+  }
+  &_description {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+}

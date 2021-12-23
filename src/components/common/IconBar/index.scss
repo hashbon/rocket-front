@@ -1,0 +1,25 @@
+@import "../../../static/styles/mixins.scss";
+
+.IconBar {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  flex-wrap: wrap;
+
+    &__item {
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
+    max-width: 34px;
+    max-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include screen(mobile) {
+      margin: 10px;
+    }
+  }
+
+
+}

@@ -1,0 +1,63 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.ProceedOrder {
+  border-radius: 15px;
+  box-sizing: border-box;
+  background-color:  var(--ui-additional);
+  @include screen(mobile) {
+    padding: 15px 10px;
+    margin: 0 -10px;
+  }
+  @include screen(notMobile) {
+    padding: 25px 20px;
+    margin: 0 -20px;
+  }
+  &_columns {
+    @include screen(notMobile) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+  &_column {
+    margin-bottom: 25px;
+    &_title {
+      color: #A3A3A3;
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+    &_context {
+      color: white;
+      @include isMobile {
+        overflow: hidden;
+        overflow-wrap: anywhere;
+      }
+    }
+    &_subcontext {
+      color: #A3A3A3;
+      font-size: 11px;
+    }
+    @include screen(notMobile) {
+      &--amount {
+        flex: 1 1 280px;
+      }
+      &--price {
+        flex: 1 1 280px;
+      }
+      &--receiving {
+        flex-basis: 100%;
+      }
+      &--timer {
+        flex-basis: 100%;
+      }
+    }
+  }
+  &_SuccessMessage {
+    padding-top: 16px;
+    color: white;
+    & a {
+      color:  var(--ui-accent);
+    }
+  }
+}

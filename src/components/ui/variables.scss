@@ -1,0 +1,29 @@
+// header
+$header-height: 60px;
+$header-icon-color: black;
+
+$secondary: #757C96;
+$dark: #333333;
+$light-gray: #B0B0BC;
+$text: #000;
+
+$background-color: #F4F5FA;
+$primary: #02a7df;
+$primary-background: lighten(rgb(0, 0, 255), 45%);
+$primary-light: #333;
+$negative: #b00000;
+$light-secondary: #B0B0BC;
+
+// ui components
+$button-border-radius: 4px;
+$button-height: 36px;
+$button-medium-height: 37px;
+$button-small-height: 30px;
+$button-large-height: 43px;
+$button-hyper-height: 68px;
+$button-hyper-min-width: 230px;
+$button-border-radius-rounded: $button-height / 2;
+$button-border-radius-rounded-medium: $button-medium-height / 2;
+$button-border-radius-rounded-small: $button-small-height / 2;
+
+

@@ -1,0 +1,43 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.OrdersPage {
+  &__list-item {
+    margin-bottom: 35px;
+
+    @include isMobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__empty-block {
+    padding: 20px 20px 70px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+
+    @include isMobile {
+      padding: 80px 20px 150px 20px;
+    }
+  }
+
+  &__empty-title {
+    margin-bottom: 30px;
+  }
+
+  &__empty-message {
+    font-size: 30px;
+    line-height: 1;
+    padding: 50px 60px;
+    border: 2px solid #fff;
+    border-radius: 80px;
+  }
+
+  &__empty-link {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+}

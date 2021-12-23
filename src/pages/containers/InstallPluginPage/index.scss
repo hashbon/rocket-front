@@ -1,0 +1,85 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+$component: '.InstallPluginPage';
+
+#{$component} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+
+  &__hint {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 310px;
+    margin-bottom: 20px;
+
+    @include isMobile {
+      font-size: 15px;
+      max-width: 230px;
+    }
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 85px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    max-width: 500px;
+    margin-bottom: 30px;
+
+    @include isMobile {
+      font-size: 50px;
+      max-width: 300px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 37px;
+    font-weight: 700;
+    font-size: 30px;
+    background: var( --ui-card-background-accent);
+
+    @include isMobile {
+      font-size: 22px;
+      padding: 10px 15px;
+    }
+
+    &:hover {
+      #{$component} {
+	&__link-text,
+	&__icon {
+          transform: translateY(-2px);
+	}
+      }
+    }
+  }
+
+  &__icon {
+    transition: 0.2s;
+    margin-right: 8px;
+  }
+
+  &__link-text {
+    position: relative;
+    transition: 0.2s;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: #fff;
+      content: '';
+    }
+  }
+}

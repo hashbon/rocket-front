@@ -1,0 +1,152 @@
+@import "./src/components/ui/variables";
+
+.input--password {
+  &--main {
+    width: 100%;
+    cursor: text;
+    position: relative;
+  }
+
+  &--wrapper {
+    width: 100%;
+    box-sizing: border-box;
+
+    input {
+      width: 100%;
+      background: transparent;
+      min-height: 20px;
+      font-size: inherit;
+      font-family: inherit;
+      box-sizing: border-box;
+      border: none;
+      margin: 0;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+      outline: none;
+      color: inherit;
+      transition: 1s;
+
+      &:focus  {
+        border-bottom-color: $primary;
+      }
+    }
+
+    &_error {
+      input {
+        border-color: $negative !important;
+      }
+    }
+
+    &_title {
+      width: 100%;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: var(--secondaryInputDescriptionColor);
+    }
+
+    &_description {
+      width: 100%;
+      font-size: 12px;
+      margin-top: 5px;
+      color: var(--secondaryInputDescriptionColor);
+
+      ul {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0 16px;
+        list-style: circle;
+      }
+
+      .hr {
+        width: 100%;
+        height: 1px;
+      }
+
+      li {
+        box-sizing: border-box;
+        padding: 4px 0;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &--right {
+    &_icon {
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      cursor: pointer;
+    }
+
+    &_see {
+      width: 32px;
+      height: 32px;
+      margin: 5px 0 auto auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+
+      svg {
+        margin: auto;
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    &_padding {
+      input {
+        padding-right: 30px;
+      }
+    }
+  }
+
+  &--secondary {
+    .input--password {
+      &--wrapper {
+        padding: 11px 16px;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        border-radius: 8px;
+        background: white;
+
+        input {
+          padding: 0;
+          border-bottom: 0;
+
+          &:focus  {
+            border-bottom-color: transparent;
+          }
+        }
+
+        &_error {
+          border-color: $negative !important;
+        }
+
+        &_description {
+          .hr {
+            background-color: rgba(0,0,0,0.05);
+            margin-bottom: 8px;
+          }
+        }
+      }
+
+      &--right {
+        &_see {
+          margin: auto auto auto 0;
+        }
+
+        &_icon {
+          width: 50px;
+        }
+
+        &_padding {
+          width: calc(100% - 50px);
+        }
+      }
+    }
+  }
+}

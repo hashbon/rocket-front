@@ -1,0 +1,216 @@
+@import "../../variables";
+
+.tab-bar-item {
+  flex: 1;
+
+  &:last-child {
+    margin-right: 16px;
+  }
+
+  &--main {
+    margin-right: 0;
+    display: flex;
+    min-height: 50px;
+    cursor: pointer;
+  }
+
+  &--rounded {
+    border: 1px solid transparent;
+    height: 35px;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    padding-top: 1px;
+    color: white;
+    cursor: pointer;
+    border-radius: 18px;
+    text-align: center;
+
+    .tab-bar-item--icon {
+      margin: auto;
+      height: 24px;
+      display: flex;
+
+      svg {
+        width: 20px;
+        margin: auto auto auto 12px;
+        height: 20px;
+      }
+    }
+
+    .tab-bar-item--title {
+      margin: auto;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    &.active {
+      background-color: white;
+      box-shadow: 0 0 0 1px black inset, 0 0 0 1px lightgrey, 0 0 0 2px $primary inset, 0 0 0 3px black inset;
+      color: black;
+      overflow: hidden;
+      text-shadow: 0 16px 0 darkblue, 0 -16px 0 gray;
+    }
+  }
+
+  &--block {
+    height: 90px;
+    overflow: hidden;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    margin-left: 16px;
+    background: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.03);
+    color: var(--tabbarColor);
+    cursor: pointer;
+
+    &.rotate {
+      .tab-bar-item--title {
+        width: auto;
+        margin-left: -20px;
+        transform: rotate(-90deg);
+        /* Legacy vendor prefixes that you probably don't need... */
+        /* Safari */
+        -webkit-transform: rotate(-90deg);
+        /* Firefox */
+        -moz-transform: rotate(-90deg);
+        /* IE */
+        -ms-transform: rotate(-90deg);
+        /* Opera */
+        -o-transform: rotate(-90deg);
+        /* Internet Explorer */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+      }
+    }
+
+    .tab-bar-item--icon {
+      margin: auto;
+      height: 24px;
+      display: flex;
+      width: 100%;
+
+      img, svg {
+        width: 45px;
+        margin: auto;
+        height: 45px;
+      }
+    }
+
+    .tab-bar-item--title {
+      margin: auto;
+      font-size: 13px;
+      font-weight: 500;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 5px 5px 0;
+    }
+
+    &.active {
+      background: #ffd097a8;
+      color: black;
+      box-shadow: none;
+    }
+  }
+
+  &--biggest {
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    cursor: pointer;
+
+    .tab-bar-item--icon {
+      margin: 0 auto;
+      display: flex;
+      width: 40px;
+
+      svg {
+        width: 40px;
+        margin: auto;
+      }
+    }
+
+    .tab-bar-item--title {
+      margin: auto 0 auto 14px;
+      font-size: 25px;
+      padding: 8px 0;
+      font-weight: bold;
+    }
+
+    &.active {
+      color: $primary;
+      background: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &--medium {
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    font-weight: 500;
+    padding-top: 1px;
+    color: black;
+    cursor: pointer;
+
+    .tab-bar-item--icon {
+      margin: auto;
+      height: 18px;
+      display: flex;
+
+      svg {
+        width: 18px;
+        margin: auto auto auto 12px;
+        height: 18px;
+      }
+    }
+
+    .tab-bar-item--title {
+      margin: auto 0 auto 14px;
+      font-size: 18px;
+      line-height: 18px;
+      padding: 8px 0;
+      font-weight: 500;
+    }
+
+    &.active {
+      color: $primary;
+      background: transparent;
+    }
+  }
+
+  &--header {
+    height: 50px;
+    display: flex;
+    color: black;
+    cursor: default !important;
+    margin-right: 16px;
+
+    .tab-bar-item--icon {
+      margin: auto 8px auto auto;
+      height: 24px;
+      display: flex;
+
+      svg {
+        width: 20px;
+        margin: auto auto auto;
+        height: 20px;
+        color: inherit;
+      }
+    }
+    .tab-bar-item--title {
+      margin: auto auto auto 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}

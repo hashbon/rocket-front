@@ -1,0 +1,57 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.TokenCard {
+  color: #fff;
+  font-size: 16px;
+
+  @include isMobile {
+    font-size: 14px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__margin {
+    margin-left: 55px;
+  }
+  &__image {
+    margin-right: 20px;
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 10px;
+    font-weight: 700;
+
+    @include screen(desktop) {
+      padding-bottom: 15px;
+      font-weight: 400;
+    }
+  }
+
+  &__name {
+
+  }
+
+  &__value {
+    color: var(--ui-accent);
+    font-weight: 700;
+  }
+
+  &__address {
+    color: #4c5a69;
+    font-size: 14px;
+    word-break: break-all;
+  }
+}

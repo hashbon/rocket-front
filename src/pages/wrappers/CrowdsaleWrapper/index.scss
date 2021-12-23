@@ -1,0 +1,13 @@
+@import "src/components/ui/variables";
+@import "src/static/styles/mixins";
+
+.CrowdsaleWrapper {
+  &_page > div {
+    &:first-child {
+      padding-top: 100px;
+      @include isMobile {
+        padding-top: 150px;
+      }
+    }
+  }
+}

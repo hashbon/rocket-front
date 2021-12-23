@@ -1,0 +1,21 @@
+@import "src/components/ui/variables";
+@import "src/static/styles/mixins";
+
+.LandingNewWrapper {
+  &_page {
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 90vh;
+    background-position: right 5vw top 100px;
+    position: relative;
+
+    & > div {
+      padding-top: 100px;
+    }
+  }
+}

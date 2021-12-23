@@ -1,0 +1,79 @@
+@import "src/static/styles/mixins";
+@import "src/static/styles/variables";
+
+.drop-actions {
+  &--main {
+    width: 100%;
+    background-color: #202020F2;
+    border: 1px solid #FFFFFF33;
+    overflow: hidden;
+    border-radius: 12px;
+    min-width: 50px;
+    min-height: 30px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+
+    @include isMobile {
+      position: fixed;
+      bottom: 0;
+      z-index: 1000;
+      left: 0;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &--overlay {}
+
+  &--item {
+    width: calc(100% - 12px);
+    padding: 12px 16px;
+    margin: 6px;
+    border-radius: 8px;
+    display: flex;
+
+    @include isMobile {
+      padding: 20px;
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+
+    span {
+      margin: auto 0;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+  }
+
+  &--button {
+    width: 100%;
+    display: flex;
+    color: #9FA3B3;
+    height: 38px;
+    cursor: pointer;
+
+
+    &:hover {
+      color: $primary-accent !important;
+    }
+
+    .icon {
+      display: flex;
+      margin: auto 0 auto auto;
+      color: inherit;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        margin: auto;
+      }
+    }
+
+    .title {
+      color: black;
+      margin: auto auto auto 12px;
+      font-size: 14px;
+    }
+  }
+}

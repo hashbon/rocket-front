@@ -1,0 +1,116 @@
+body.react-confirm-alert-body-element {
+  overflow: hidden;
+}
+
+.react-confirm-alert-blur {}
+
+.react-confirm-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: react-confirm-alert-fadeIn 0.3s 0.2s forwards;
+}
+
+.react-confirm-alert-body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 400px;
+  text-align: left;
+  background: #fff;
+  border-radius: 10px;
+  color: #333;
+  overflow: hidden;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.react-confirm-alert-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.react-confirm-alert-body > h1 {
+  color: #2A2B35;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 32px 0 10px;
+}
+
+.react-confirm-alert-body > h3 {
+  margin: 20px;
+  font-size: 16px;
+}
+
+.react-confirm-alert-button-group {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border-top: 1px solid #EEEFF3;
+}
+
+.react-confirm-alert-button-group > button {
+  flex: 1 1;
+  outline: none;
+  background: white;
+  border: none;
+  display: inline-block;
+  padding: 20px 0;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background: #f9f9f9;
+    color: black;
+  }
+}
+
+@-webkit-keyframes react-confirm-alert-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes react-confirm-alert-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes react-confirm-alert-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes react-confirm-alert-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

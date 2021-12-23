@@ -1,0 +1,17 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.centered {
+  &--main {
+    width: calc(100% - 48px);
+    margin: auto;
+
+    @include isMobile {
+      width: calc(100% - 32px);
+    }
+  }
+
+  &--context {
+    width: 100%;
+  }
+}

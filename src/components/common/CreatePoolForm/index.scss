@@ -1,0 +1,28 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.CreatePoolForm {
+  width: 700px;
+  margin: auto auto;
+  box-sizing: border-box;
+  padding: 16px;
+
+  @include isMobile {
+    margin: 16px 16px auto;
+    width: calc(100% - 32px);
+    padding: 0;
+  }
+
+  &_box {
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  &_SuccessMessage {
+    padding-top: 16px;
+    color: white;
+    & a {
+      color:  var(--ui-accent);
+    }
+  }
+}

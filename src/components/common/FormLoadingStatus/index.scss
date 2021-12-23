@@ -1,0 +1,71 @@
+@import "../../../static/styles/variables";
+@import "../../../static/styles/mixins";
+
+.FormLoadingStatus {
+  display: flex;
+  align-items: center;
+  width: 350px;
+
+  @include screen(notMobile) {
+    min-height: 80px;
+  }
+
+  @include screen(tablet) {
+    width: 250px;
+  }
+
+  @include screen(mobile) {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 32px;
+    @include screen(tablet) {
+      font-size: 28px;
+    }
+    @include screen(mobile) {
+      font-size: 24px;
+    }
+  }
+
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > svg {
+      height: 70px;
+    }
+
+    @include screen(mobile) {
+      width: 50px;
+      height: 50px;
+      & > svg {
+        height: 50px;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 16px;
+    color: #fff;
+
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 16px;
+    & > a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
+}

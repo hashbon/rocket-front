@@ -1,0 +1,150 @@
+@import "../../../../../static/styles/variables";
+@import "../../../../../static/styles/mixins";
+
+.SwapForm {
+  &_InputGroup {
+    background-color: rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-radius: 12px;
+    @include screen(notMobile) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &_SuccessMessage {
+    padding-top: 16px;
+    color: white;
+    & a {
+      color:  var(--ui-accent);
+    }
+  }
+  &_select {
+    display: flex;
+    margin: auto auto auto 0;
+    .text {
+      font-size: 20px;
+      color: white;
+      line-height: 24px;
+      margin: auto;
+    }
+    .icon {
+      height: 24px;
+      display: flex;
+    }
+    .circle {
+      width: 24px;
+      height: 24px;
+      margin: 1px 12px auto auto;
+      background-color: rgba(255,255,255,0.818);
+      border-radius: 12px;
+      display: flex;
+      span {
+        margin: auto;
+        font-size: 14px;
+        color: var(--ui-accent);
+        font-weight: bold;
+      }
+    }
+    svg {
+      width: 16px;
+      margin: 3px auto 0 12px;
+      color: white;
+    }
+  }
+}
+
+.InputGroup {
+  &_Label {
+    color: white;
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: 12px;
+    padding-left: 1px;
+    @include screen(mobile) {
+      display: none;
+    }
+    &_icon {
+      position: absolute;
+      margin-left: calc(50% - 12px);
+      margin-top: -5px;
+      @include screen(mobile) {
+        display: none;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+        color: white;
+      }
+    }
+  }
+  &_Button {
+    @include screen(notMobile) {
+      flex: 1;
+      margin: auto;
+    }
+  }
+  &_Input {
+    flex: 1;
+    input::placeholder {
+      color: white;
+    }
+    @include screen(mobile) {
+      padding-top: 10px;
+    }
+  }
+}
+
+.SwapFormFooter {
+  @include screen(notMobile) {
+    align-items: center;
+  }
+  &_Info {
+    @include screen(mobile) {
+      padding-top: 30px;
+      min-height: 80px;
+    }
+    @include screen(notMobile) {
+      flex: 1;
+    }
+    &_NotFound {
+      color: white;
+      @include screen(mobile) {
+        text-align: center;
+      }
+      &_Line_1 {
+        font-weight: 700;
+        @include screen(mobile) {
+          font-size: 20px;
+        }
+        @include screen(notMobile) {
+          font-size: 38px;
+        }
+      }
+      &_Line_2 {
+        font-weight: 300;
+        @include screen(mobile) {
+          font-size: 12px;
+        }
+        @include screen(notMobile) {
+          font-size: 28px;
+        }
+      }
+      &_Line_3 {
+        font-weight: 300;
+        @include screen(mobile) {
+          font-size: 8px;
+        }
+        @include screen(notMobile) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &_Button {
+    @include screen(mobile) {
+      padding-top: 10px;
+      height: 60px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import "src/static/styles/mixins";
+
+.Modals {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1100;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 48px 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  -webkit-overflow-scrolling: touch;
+
+
+
+  .Modals__box {
+    background: var(--mainBoxBackground);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 0 4px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-sizing: border-box;
+    min-width: 200px;
+    position: relative;
+    flex: 0 0 auto;
+    max-width: calc(100vw - 200px) !important;
+    overflow: hidden;
+    @include isMobile {
+      max-width: calc(100vw - 50px) !important;
+    }
+  }
+
+  .Modals__box__close {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    top: 0;
+    background: url('./assets/close.svg') no-repeat center;
+    background-size: 24px;
+    width: 60px;
+    height: 60px;
+    color: white;
+  }
+
+  &.Modals__noSpacing {
+    .Modals__box {
+      padding: 0;
+    }
+  }
+}
+
+.Modals:empty {
+  display: none;
+}
+
+.Modals__header {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+
+  .Modals__noSpacing & {
+    margin-top: 32px;
+  }
+}
+
+.Modals::-webkit-scrollbar {width: 6px;cursor:pointer;position:absolute;}
+.Modals::-webkit-scrollbar-track-piece {background-color:transparent;}
+.Modals::-webkit-scrollbar-thumb:vertical {background-color: #f3f3f3;border:2px solid #fff;border-left:0;}
+.Modals:hover::-webkit-scrollbar-thumb:vertical{background-color:#eee;}
+.Modals::-webkit-scrollbar-thumb:active{background-color:#ccc !important;}
